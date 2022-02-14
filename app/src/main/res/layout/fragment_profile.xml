@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfileFragment">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".40" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintBottom_toTopOf="@id/profileImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                app:title="Profile" />
+
+            <ImageView
+                android:id="@+id/settings"
+                android:layout_marginEnd="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_settings" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profileImage"
+        style="@style/Style.App.circleImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_user"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appLayout" />
+
+    <TextView
+        android:id="@+id/txtUserBio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:gravity="start"
+        android:text="Kaushal \n Android Develoeper"
+        android:textColor="?attr/colorOnSecondary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImage" />
+
+    <!--INFO LAYOUT-->
+    <TextView
+        android:id="@+id/txtPost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center_horizontal"
+        android:text="3"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtFollower"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/appLayout" />
+
+    <TextView
+        android:id="@+id/lblPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Posts"
+        app:layout_constraintEnd_toEndOf="@id/txtPost"
+        app:layout_constraintStart_toStartOf="@id/txtPost"
+        app:layout_constraintTop_toBottomOf="@id/txtPost" />
+
+
+    <TextView
+        android:id="@+id/lblFollower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Followers"
+        app:layout_constraintEnd_toEndOf="@id/txtFollower"
+        app:layout_constraintStart_toStartOf="@id/txtFollower"
+        app:layout_constraintTop_toBottomOf="@id/txtFollower" />
+
+    <TextView
+        android:id="@+id/txtFollower"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblFollower"
+        android:layout_marginTop="50dp"
+        android:layout_toEndOf="@id/lblPost"
+        android:gravity="center_horizontal"
+        android:text="3"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtFollowing"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/txtPost"
+        app:layout_constraintTop_toBottomOf="@id/appLayout" />
+
+    <TextView
+        android:id="@+id/lblFollowing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/lblFollower"
+        android:text="Following"
+        app:layout_constraintEnd_toEndOf="@id/txtFollowing"
+        app:layout_constraintStart_toStartOf="@id/txtFollowing"
+        app:layout_constraintTop_toBottomOf="@id/txtFollowing" />
+
+    <TextView
+        android:id="@+id/txtFollowing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblFollowing"
+        android:layout_marginTop="50dp"
+        android:layout_toEndOf="@id/lblFollower"
+        android:gravity="center_horizontal"
+        android:text="12"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtFollower"
+        app:layout_constraintTop_toBottomOf="@id/appLayout" />
+
+    <TextView
+        android:id="@+id/editProfileBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Edit profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/lblPost" />
+    <!-- LAYOUT FOR POSTS -->
+
+    <ImageView
+        android:id="@+id/postLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_grid"
+        app:layout_constraintEnd_toStartOf="@id/savePosts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline2" />
+
+    <ImageView
+        android:id="@+id/savePosts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_bookmark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/postLayout"
+        app:layout_constraintTop_toBottomOf="@id/guideline2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
